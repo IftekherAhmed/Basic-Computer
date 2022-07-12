@@ -1,0 +1,26 @@
+*Replace Multiple File of Particular Folder
+-----------------------------------------------
+
+Suppose Our Files name are like:
+------------------------------------------------
+01. English Course - Reading.mp4
+02. English Course - Writing.mp4
+03. English Course - Listening.mp4
+04. English Course - Speaking.mp4
+05. English Course - Basic Communication.mp4
+
+
+To rename those items we need to go through bellows:
+------------------------------------------------------
+=> Open the very folder which contains those files
+=> Open Windows PowerShell With the directory location of the folder
+=> and paste the command by clickking the right button of mouse:  
+get-childitem *MP4 | foreach {rename-item $_ $_.name.replace(' English Course - ', '')}
+
+After doing the action the files name would be like:
+----------------------------------------------------
+01.Reading.mp4
+02.Writing.mp4
+03.Listening.mp4
+04.Speaking.mp4
+05.Basic Communication.mp4
